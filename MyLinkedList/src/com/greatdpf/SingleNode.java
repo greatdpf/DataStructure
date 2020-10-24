@@ -8,8 +8,21 @@ package com.greatdpf;
  * @date : 2020/10/24
  */
 public class SingleNode {
+    /**
+     * 存放下一个节点的值
+     */
     private SingleNode next;
+    /**
+     * 存放数据
+     */
     private int data;
+
+    public SingleNode() {
+    }
+
+    public SingleNode(int data) {
+        this.data = data;
+    }
 
     public SingleNode getNext() {
         return next;
@@ -27,7 +40,5 @@ public class SingleNode {
         this.data = data;
     }
 
-    public SingleNode(int data) {
-        this.data = data;
-    }
+
 }
