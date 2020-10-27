@@ -1,4 +1,4 @@
-package com.greatdpf;
+package com.greatdpf.singleLinkedList;
 
 /**
  * 单向链表结构实现

@@ -1,4 +1,4 @@
-package com.greatdpf;
+package com.greatdpf.doubleLinkedList;
 
 /**
  * 双链表的节点

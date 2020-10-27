@@ -1,4 +1,4 @@
-package com.greatdpf;
+package com.greatdpf.singleLinkedList;
 
 /**
  * 简单的单链表的节点
