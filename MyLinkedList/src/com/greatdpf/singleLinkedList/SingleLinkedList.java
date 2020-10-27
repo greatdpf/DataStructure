@@ -4,6 +4,7 @@ package com.greatdpf.singleLinkedList;
  * 单向链表结构实现
  * 1.添加功能
  * 2.打印功能
+ * 3.链表反转
  *
  * @author : dpf
  * @version : V1.0
@@ -50,6 +51,24 @@ public class SingleLinkedList {
     }
 
     /**
+     * 单链表的反转
+     */
+    public void reverse() {
+        // 记录反转链表的头节点
+        SingleNode next = null;
+        // 记录原来头节点
+        SingleNode reFirst = null;
+        // 判断头节点是否为空
+        while (first != null) {
+            reFirst = first.getNext();
+            first.setNext(next);
+            next = first;
+            first = reFirst;
+        }
+        first = next;
+    }
+
+    /**
      * 获取链表长度
      * @return size 链表长度
      */
@@ -65,9 +84,10 @@ public class SingleLinkedList {
         SingleNode next = first;
         // 从头依次循环向下打印
         for (int i = 0;i < size;i++) {
-            System.out.println(next.getData());
+            System.out.print(next.getData() + " ");
             next = next.getNext();
         }
+        System.out.println();
     }
 
 
