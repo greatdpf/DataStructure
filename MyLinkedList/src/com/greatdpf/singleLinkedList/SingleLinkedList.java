@@ -91,4 +91,34 @@ public class SingleLinkedList {
     }
 
 
+    /**
+     * 删除元素
+     * @param num 需要删除的值
+     */
+    public void removeValue(int num) {
+        SingleNode head = first;
+        while(head != null) {
+            if (head.getData() != num) {
+                break;
+            }
+            size--;
+            head = head.getNext();
+        }
+
+        SingleNode next = head.getNext();
+        SingleNode pre = head;
+
+        while(next != null) {
+            if (next.getData() == num) {
+                size--;
+                pre.setNext(next.getNext());
+            } else {
+                pre = next;
+            }
+            next = next.getNext();
+        }
+        first = head;
+    }
+
+
 }
