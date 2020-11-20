@@ -70,9 +70,10 @@ public class DoubleLinkedList {
     public void printLinkedListByFirst() {
         DoubleNode next = first;
         for (int i = 0;i < size;i++) {
-            System.out.println(next.getData());
+            System.out.print(next.getData() + " ");
             next = next.getNext();
         }
+        System.out.println();
     }
 
     /**
@@ -81,9 +82,27 @@ public class DoubleLinkedList {
     public void printLinkedListByLast() {
         DoubleNode previous = last;
         for (int i =0;i < size;i++) {
-            System.out.println(previous.getData());
+            System.out.print(previous.getData() + " ");
             previous = previous.getPrevious();
         }
+        System.out.println();
+    }
+
+    /**
+     * 反转双向链表
+     */
+    public void reversDoubleLinkedList() {
+        this.last = this.first;
+        DoubleNode next = null;
+        DoubleNode pre = null;
+        while(this.first != null) {
+            next = this.first.getNext();
+            this.first.setNext(pre);
+            this.first.setPrevious(next);
+            pre = this.first;
+            this.first = next;
+        }
+        first = pre;
     }
 
 }
